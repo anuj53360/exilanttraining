@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   http://www.springframework.org/schema/beans/spring-beans.xsd"
+	   default-init-method="ginit" default-destroy-method="gdestroy"
+	   
+	   >
+
+
+
+
+	<bean id="questionBank" class="com.exilant.collections.QuestionBank">
+	<property name="questions" value="Inheritance"/>
+    <property name="options">
+    <list>
+    <value>java</value>
+    <value>c++</value>
+    <value>all</value>
+    </list>
+    </property>
+</bean>
+
+
+<bean id="addressSet" class="com.exilant.collections.AddressSet">
+	<property name="addressset">
+    <set>
+   <value>z</value>
+    <value>x</value>
+    <value>y</value>
+    </set>
+    </property>
+</bean>
+
+
+<bean id="accountMap" class="com.exilant.collections.AccountMap">
+	<property name="accountMap">
+     <map>
+  <entry key="Anuj" value="3434"/>
+ <entry key="Anujj" value="34341"/>
+ <entry key="Anujjj" value="34342"/>
+ </map> 
+ <!-- <map>
+ <entry>
+ <key>Anuj</key>
+ <value>23445</value>
+ </entry>
+ </map> -->
+    </property>
+</bean>
+
+<bean id="myCollection" class="com.exilant.collections.MyCollection" autowire="byName"></bean>
+
+
+
+
+
+</beans>
