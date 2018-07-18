@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   http://www.springframework.org/schema/beans/spring-beans.xsd"
+	   
+	   default-init-method="ginit" default-destroy-method="gdestroy"
+	   >
+
+<bean class="com.exilant.processor.EmployeeBeanProcessor"/>
+
+<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+<property name="location"> <value>employeeinfo.properties</value></property></bean>
+
+	<bean id="employee" class="com.training.employee.Employee" scope="singleton" init-method="init" destroy-method="destroy">
+		<property name="empId" value="101" />
+		<property name="empName" value="Anuj" />
+<property name="empSal" value="100000000" />
+
+	</bean>
+
+<bean id="employee1" class="com.training.employee.Employee" scope="singleton" init-method="init" destroy-method="destroy">
+		 <property name="empId" value="${employee.empid}" />
+		<property name="empName" value="${employee.empname}" />
+<property name="empSal" value="${employee.empsal}" /> 
+
+	</bean>
+
+</beans>

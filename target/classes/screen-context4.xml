@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   http://www.springframework.org/schema/beans/spring-beans.xsd"
+	   >
+
+
+<bean id="cammera" class="com.exilant.training.Camera">
+<property name="type" value="vga"/>
+</bean>
+
+<bean id="screen" class="com.exilant.training.Screen">
+
+<property name="glassType" value="tuffen"/>
+<property name="len" value="5"/>
+<property name="bre" value="3"/>
+
+</bean>
+
+<bean id="speaker" class="com.exilant.training.Speaker">
+
+<property name="volLevels" value="15"/>
+<property name="type" value="monoSpeaker"/>
+</bean>
+
+
+<bean id="mobile" class="com.exilant.training.Mobile" autowire="byName">
+<!-- <property name="cammera" ref="camera"/>
+<property name="screen" ref="screen"/>
+<property name="speaker" ref="speaker"/> -->
+</bean>
+
+</beans>
