@@ -70,7 +70,7 @@ private DataSource datasource;
 	@Override
 	public void updateEmployee(int empId, int empNewSalary) {
 		
-		String sql=""
+		String sql="";
 		
 	}
 
