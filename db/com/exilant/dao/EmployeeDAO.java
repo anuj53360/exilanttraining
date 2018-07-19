@@ -63,15 +63,17 @@ private DataSource datasource;
 
 	@Override
 	public void deleteEmployee(int empId) {
-	
-		
+	String sql="DELETE from employee where EMPID=?";
+	int x=jdbctemplate.update(sql,new Object[] {empId},new BeanPropertyRowMapper<>(Employee.class));	
+	System.out.println(x);	
 	}
 
 	@Override
 	public void updateEmployee(int empId, int empNewSalary) {
 		
-		String sql="";
-		
+		String sql="UPDATE employee SET EMPSAL = ? WHERE EMPID = ?";
+		int x=jdbctemplate.update(sql,new Object[] {empId,empNewSalary},new BeanPropertyRowMapper<>(Employee.class));
+	System.out.println(x);
 	}
 
 	@Override
