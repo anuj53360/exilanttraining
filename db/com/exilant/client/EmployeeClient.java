@@ -29,6 +29,10 @@ System.out.println(emp);
 
 Employee emp1=(Employee) employee.getAllEmployee();
 System.out.println(emp1);
+	
+	employee.updateEmployee(101,14556);
+		
+		employee.deleteEmployee(101);
 	}
 
 }
